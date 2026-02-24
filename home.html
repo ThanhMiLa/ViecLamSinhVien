@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Bảng tin việc làm - Lọc theo giờ cụ thể</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#135bec",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style type="text/tailwindcss">
+    body {
+              font-family: 'Inter', sans-serif;
+          }
+          .custom-scrollbar::-webkit-scrollbar {
+              width: 4px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-track {
+              background: transparent;
+          }
+          .custom-scrollbar::-webkit-scrollbar-thumb {
+              background: #e2e8f0;
+              border-radius: 10px;
+          }
+      </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#0d121b] dark:text-white min-h-screen">
+  <header
+    class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-[#e7ebf3] dark:border-white/10 px-6 md:px-10 py-3">
+    <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-4">
+
+      <div class="flex items-center gap-3 text-primary shrink-0">
+        <div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+          <span class="material-symbols-outlined">work</span>
+        </div>
+        <h2 class="hidden sm:block text-black dark:text-white text-xl font-bold">JobPortal</h2>
+      </div>
+
+      <div class="hidden md:flex flex-1 justify-center">
+        <div
+          class="flex items-center gap-2 bg-[#e7ebf3] dark:bg-white/5 p-1 rounded-xl border border-transparent focus-within:border-primary/50 transition-all w-full max-w-2xl mx-auto shadow-sm">
+
+          <div class="relative flex-[1.2] h-9">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 text-[#4c669a]">
+              <span class="material-symbols-outlined text-sm">search</span>
+            </div>
+            <input
+              class="block w-full h-full pl-8 pr-2 bg-transparent border-none focus:ring-0 text-xs placeholder:text-[#4c669a]"
+              placeholder="Việc làm..." type="text" />
+          </div>
+
+          <div class="w-px h-5 bg-gray-300 dark:bg-white/10"></div>
+
+          <div class="relative flex-1 h-9">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-2 text-[#4c669a]">
+              <span class="material-symbols-outlined text-sm">location_on</span>
+            </div>
+            <select
+              class="block w-full h-full pl-7 pr-2 bg-transparent border-none focus:ring-0 text-xs text-[#0d121b] dark:text-gray-300 appearance-none cursor-pointer">
+              <option value="">Thành phố</option>
+              <option value="dn">Đà Nẵng</option>
+              <option value="hn">Hà Nội</option>
+              <option value="hcm">TP. HCM</option>
+            </select>
+          </div>
+
+          <div class="w-px h-5 bg-gray-300 dark:bg-white/10"></div>
+
+          <div class="relative flex-1 h-9">
+            <input
+              class="block w-full h-full px-3 bg-transparent border-none focus:ring-0 text-xs placeholder:text-[#4c669a]"
+              placeholder="Quận/Phường..." type="text" />
+          </div>
+
+          <button
+            class="bg-primary text-white px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-blue-700 transition-colors shrink-0">
+            Tìm
+          </button>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 shrink-0">
+        <nav class="hidden lg:flex items-center gap-6 mr-2">
+          <a class="text-[#4c669a] dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors"
+            href="#">Tin nhắn</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <button class="p-2 rounded-lg bg-[#e7ebf3] dark:bg-white/5 text-[#0d121b] dark:text-white">
+            <span class="material-symbols-outlined text-xl">notifications</span>
+          </button>
+          <div class="size-9 rounded-full bg-slate-200 border border-primary/20"></div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+  <main class="max-w-[1440px] mx-auto px-6 md:px-10 py-8">
+    <div class="flex gap-8">
+      <aside
+        class="hidden xl:flex flex-col w-80 shrink-0 gap-8 sticky top-24 self-start h-[calc(100vh-120px)] overflow-y-auto custom-scrollbar pr-2">
+        <div class="flex flex-col gap-2">
+          <h1 class="text-[#0d121b] dark:text-white text-lg font-bold">Bộ lọc tìm kiếm</h1>
+          <div class="bg-blue-50 dark:bg-primary/10 rounded-lg p-3 border border-primary/20">
+            <div class="flex items-center gap-2 text-primary mb-1">
+              <span class="material-symbols-outlined text-sm">event_available</span>
+              <span class="text-xs font-bold uppercase tracking-wider">Lịch của bạn</span>
+            </div>
+            <p class="text-xs text-[#4c669a] leading-relaxed">Đang lọc theo lịch học đã cài đặt trong <a
+                class="text-primary font-semibold underline" href="schedule.html">Cài đặt</a></p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-2 border-b border-[#e7ebf3] dark:border-white/10 pb-2">
+            <span class="material-symbols-outlined text-lg">category</span>
+            <h3 class="font-bold text-sm">Ngành nghề</h3>
+          </div>
+          <div class="flex flex-col gap-2.5">
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input checked class="rounded border-[#cfd7e7] text-primary focus:ring-primary size-4" type="checkbox" />
+              <span class="text-sm text-[#0d121b] dark:text-gray-300 group-hover:text-primary transition-colors">F&B -
+                Nhà hàng & Cafe</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input class="rounded border-[#cfd7e7] text-primary focus:ring-primary size-4" type="checkbox" />
+              <span class="text-sm text-[#0d121b] dark:text-gray-300 group-hover:text-primary transition-colors">Gia sư
+                & Giáo dục</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input checked class="rounded border-[#cfd7e7] text-primary focus:ring-primary size-4" type="checkbox" />
+              <span class="text-sm text-[#0d121b] dark:text-gray-300 group-hover:text-primary transition-colors">Bán lẻ
+                & Siêu thị</span>
+            </label>
+
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input class="rounded border-[#cfd7e7] text-primary focus:ring-primary size-4" type="checkbox" />
+              <span
+                class="text-sm text-[#0d121b] dark:text-gray-300 group-hover:text-primary transition-colors">Marketing &
+                Content</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input class="rounded border-[#cfd7e7] text-primary focus:ring-primary size-4" type="checkbox" />
+              <span class="text-sm text-[#0d121b] dark:text-gray-300 group-hover:text-primary transition-colors">IT &
+                Thiết kế đồ họa</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input class="rounded border-[#cfd7e7] text-primary focus:ring-primary size-4" type="checkbox" />
+              <span class="text-sm text-[#0d121b] dark:text-gray-300 group-hover:text-primary transition-colors">Sự kiện
+                & PG/PB</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input class="rounded border-[#cfd7e7] text-primary focus:ring-primary size-4" type="checkbox" />
+              <span class="text-sm text-[#0d121b] dark:text-gray-300 group-hover:text-primary transition-colors">Văn
+                phòng & Admin</span>
+            </label>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-2 border-b border-[#e7ebf3] dark:border-white/10 pb-2">
+            <span class="material-symbols-outlined text-lg">payments</span>
+            <h3 class="font-bold text-sm">Mức lương (theo giờ)</h3>
+          </div>
+          <div class="px-2">
+            <input
+              class="w-full h-1.5 bg-[#e7ebf3] dark:bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary"
+              max="100" min="20" step="5" type="range" />
+            <div class="flex justify-between mt-2 text-xs text-[#4c669a]">
+              <span>20k/h</span>
+              <span>100k/h</span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="mt-4 w-full py-3 bg-[#e7ebf3] dark:bg-white/5 text-[#0d121b] dark:text-white text-sm font-bold rounded-xl hover:bg-gray-200 transition-colors">Xoá
+          tất cả lọc</button>
+      </aside>
+      <div class="flex-1 flex flex-col gap-6">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-end justify-between">
+            <div>
+              <h2 class="text-2xl font-bold text-[#0d121b] dark:text-white">Việc làm phù hợp</h2>
+              <p class="text-sm text-[#4c669a] mt-1">Khớp với thời gian rảnh của bạn trong tuần</p>
+            </div>
+            <p class="text-sm text-[#4c669a]">Tìm thấy 42 việc làm</p>
+          </div>
+          <div class="border-b border-[#cfd7e7] dark:border-white/10 flex gap-8">
+            <a class="border-b-[3px] border-primary pb-3 text-sm font-bold text-primary" href="#">Dành cho bạn</a>
+            <a class="border-b-[3px] border-transparent pb-3 text-sm font-medium text-[#4c669a] hover:text-[#0d121b] dark:hover:text-white transition-colors"
+              href="#">Mới nhất</a>
+            <a class="border-b-[3px] border-transparent pb-3 text-sm font-medium text-[#4c669a] hover:text-[#0d121b] dark:hover:text-white transition-colors"
+              href="#">Lương cao nhất</a>
+          </div>
+
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- JOB 1: F&B - Đà Nẵng -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-primary text-2xl">local_cafe</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Nhân viên Phục vụ (Part-time) - Ca tối
+                  </h3>
+                  <p class="text-sm text-[#4c669a]">Highlands Coffee • Hải Châu, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 text-[10px] font-bold rounded uppercase tracking-wider border border-green-200 dark:border-green-500/30">
+                  Phù hợp
+                </span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors">
+                  <span class="material-symbols-outlined text-xl">favorite</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Thứ 2 - Chủ nhật</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">17:00 - 22:30</span>
+                </div>
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10 opacity-70">
+                  <span class="text-sm font-medium text-[#4c669a]">Off 1 ngày/tuần</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">28.000đ -
+                33.000đ/giờ</span>
+              <span class="text-xs text-[#4c669a]">+ phụ cấp ca tối</span>
+            </div>
+
+            <!-- Thông tin bổ sung -->
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-base">location_on</span>
+                <span>271 Nguyễn Văn Linh, P. Thạc Gián, Q. Thanh Khê, Đà Nẵng</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-base">group</span>
+                <span>Cần tuyển: <b class="text-[#0d121b] dark:text-white">04</b> người</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-base">verified</span>
+                <span>Đã tuyển qua JobPortal: <b class="text-[#0d121b] dark:text-white">52</b> người</span>
+              </div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]">
+                <span class="material-symbols-outlined text-base">history</span>
+                <span>40 phút trước</span>
+              </div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">
+                Ứng tuyển
+              </a>
+            </div>
+          </div>
+
+          <!-- JOB 2: Giáo dục - Đà Nẵng -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-orange-500 text-2xl">menu_book</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Trợ giảng Tiếng Anh (Part-time)
+                  </h3>
+                  <p class="text-sm text-[#4c669a]">Trung tâm Anh ngữ • Cẩm Lệ, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 text-[10px] font-bold rounded uppercase tracking-wider border border-blue-200 dark:border-blue-500/30">
+                  Ưu tiên SV
+                </span>
+                <button class="text-red-500">
+                  <span class="material-symbols-outlined text-xl"
+                    style="font-variation-settings: 'FILL' 1">favorite</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Thứ 3 - Thứ 6</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">18:00 - 21:00</span>
+                </div>
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10 opacity-70">
+                  <span class="text-sm font-medium text-[#4c669a]">Có training 1 buổi</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">45.000đ -
+                70.000đ/giờ</span>
+            </div>
+
+            <!-- Thông tin bổ sung -->
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-base">location_on</span>
+                <span>58 Nguyễn Hữu Thọ, P. Hòa Thuận Tây, Q. Hải Châu, Đà Nẵng</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-base">group</span>
+                <span>Cần tuyển: <b class="text-[#0d121b] dark:text-white">02</b> người</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-base">verified</span>
+                <span>Đã tuyển qua JobPortal: <b class="text-[#0d121b] dark:text-white">31</b> người</span>
+              </div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]">
+                <span class="material-symbols-outlined text-base">history</span>
+                <span>Hôm qua</span>
+              </div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">
+                Ứng tuyển
+              </a>
+            </div>
+          </div>
+
+          <!-- JOB 3: Kho vận - Đà Nẵng -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-blue-400 text-2xl">inventory_2</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Nhân viên Soạn hàng Kho (Ca sáng)
+                  </h3>
+                  <p class="text-sm text-[#4c669a]">Kho tổng • Liên Chiểu, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-400 text-[10px] font-bold rounded uppercase tracking-wider border border-orange-200 dark:border-orange-500/30">
+                  Đi làm ngay
+                </span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors">
+                  <span class="material-symbols-outlined text-xl">favorite</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Thứ 2 - Thứ 7</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">07:30 - 12:00</span>
+                </div>
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10 opacity-70">
+                  <span class="text-sm font-medium text-[#4c669a]">Bốc xếp nhẹ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">30.000đ -
+                38.000đ/giờ</span>
+            </div>
+
+            <!-- Thông tin bổ sung -->
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-base">location_on</span>
+                <span>245 Tôn Đức Thắng, P. Hòa Minh, Q. Liên Chiểu, Đà Nẵng</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-base">group</span>
+                <span>Cần tuyển: <b class="text-[#0d121b] dark:text-white">05</b> người</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-base">verified</span>
+                <span>Đã tuyển qua JobPortal: <b class="text-[#0d121b] dark:text-white">44</b> người</span>
+              </div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]">
+                <span class="material-symbols-outlined text-base">history</span>
+                <span>3 giờ trước</span>
+              </div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">
+                Ứng tuyển
+              </a>
+            </div>
+          </div>
+
+          <!-- JOB 4: Bán lẻ - Đà Nẵng -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-purple-500 text-2xl">shopping_basket</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Thu ngân / Bán hàng (Part-time)
+                  </h3>
+                  <p class="text-sm text-[#4c669a]">WinMart+ • Sơn Trà, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 text-[10px] font-bold rounded uppercase tracking-wider border border-green-200 dark:border-green-500/30">
+                  Ổn định
+                </span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors">
+                  <span class="material-symbols-outlined text-xl">favorite</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Ca xoay</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">14:00 - 22:00</span>
+                </div>
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10 opacity-70">
+                  <span class="text-sm font-medium text-[#4c669a]">Ưu tiên làm T7/CN</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">26.000đ -
+                32.000đ/giờ</span>
+              <span class="text-xs text-[#4c669a]">+ thưởng doanh số</span>
+            </div>
+
+            <!-- Thông tin bổ sung -->
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-base">location_on</span>
+                <span>86 Ngô Quyền, P. An Hải Bắc, Q. Sơn Trà, Đà Nẵng</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-base">group</span>
+                <span>Cần tuyển: <b class="text-[#0d121b] dark:text-white">03</b> người</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-base">verified</span>
+                <span>Đã tuyển qua JobPortal: <b class="text-[#0d121b] dark:text-white">39</b> người</span>
+              </div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]">
+                <span class="material-symbols-outlined text-base">history</span>
+                <span>15 phút trước</span>
+              </div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">
+                Ứng tuyển
+              </a>
+            </div>
+          </div>
+
+          <!-- JOB 5 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-primary text-2xl">restaurant</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Phụ bếp (Part-time)</h3>
+                  <p class="text-sm text-[#4c669a]">Quán ăn gia đình • Thanh Khê, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 text-[10px] font-bold rounded uppercase tracking-wider border border-green-200 dark:border-green-500/30">Ổn
+                  định</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Thứ 2 - Thứ 7</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">16:30 - 21:30</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">30.000đ -
+                40.000đ/giờ</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>102 Nguyễn Văn Linh, P. Thạc Gián,
+                  Q. Thanh Khê, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">02</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">18</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>2 giờ trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 6 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-purple-500 text-2xl">local_grocery_store</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Nhân viên bán hàng tiện lợi (Ca tối)</h3>
+                  <p class="text-sm text-[#4c669a]">Cửa hàng tiện lợi • Hải Châu, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 text-[10px] font-bold rounded uppercase tracking-wider border border-blue-200 dark:border-blue-500/30">Ca
+                  cố định</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Theo ca</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">18:00 - 23:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">26.000đ -
+                32.000đ/giờ</span>
+              <span class="text-xs text-[#4c669a]">+ phụ cấp</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>18 Ông Ích Khiêm, P. Hải Châu I,
+                  Q. Hải Châu, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">03</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">27</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>1 giờ trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 7 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-blue-400 text-2xl">delivery_dining</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Giao hàng nội thành (Theo ca)</h3>
+                  <p class="text-sm text-[#4c669a]">Đối tác giao nhận • Sơn Trà, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-400 text-[10px] font-bold rounded uppercase tracking-wider border border-orange-200 dark:border-orange-500/30">Linh
+                  hoạt</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Chọn ca</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">11:00 - 15:00</span>
+                </div>
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10 opacity-70">
+                  <span class="text-sm font-medium text-[#4c669a]">17:00 - 22:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">35.000đ -
+                55.000đ/giờ</span>
+              <span class="text-xs text-[#4c669a]">+ thưởng đơn</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>55 Ngô Quyền, P. An Hải Bắc, Q.
+                  Sơn Trà, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">05</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">64</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>30 phút trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 8 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-orange-500 text-2xl">support_agent</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    CSKH Online (Part-time)</h3>
+                  <p class="text-sm text-[#4c669a]">Shop thời trang • Hải Châu, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 text-[10px] font-bold rounded uppercase tracking-wider border border-blue-200 dark:border-blue-500/30">Làm
+                  tại cửa hàng</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Thứ 2 - Thứ 6</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">13:30 - 17:30</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">28.000đ -
+                35.000đ/giờ</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>89 Hùng Vương, P. Hải Châu I, Q.
+                  Hải Châu, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">01</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">11</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>3 giờ trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 9 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-blue-400 text-2xl">cleaning_services</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Tạp vụ văn phòng (Part-time)</h3>
+                  <p class="text-sm text-[#4c669a]">Văn phòng công ty • Ngũ Hành Sơn, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 text-[10px] font-bold rounded uppercase tracking-wider border border-green-200 dark:border-green-500/30">Nhẹ
+                  nhàng</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Thứ 2 - Thứ 6</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">07:30 - 11:30</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">25.000đ -
+                30.000đ/giờ</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>12 Trần Đại Nghĩa, P. Hòa Hải, Q.
+                  Ngũ Hành Sơn, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">02</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">9</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>Hôm nay</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 10 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-primary text-2xl">hotel</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Lễ tân khách sạn (Ca đêm)</h3>
+                  <p class="text-sm text-[#4c669a]">Khách sạn mini • Sơn Trà, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-400 text-[10px] font-bold rounded uppercase tracking-wider border border-orange-200 dark:border-orange-500/30">Ca
+                  đêm</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Theo lịch</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">22:00 - 06:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">35.000đ -
+                45.000đ/giờ</span>
+              <span class="text-xs text-[#4c669a]">+ phụ cấp đêm</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>30 Võ Nguyên Giáp, P. Phước Mỹ, Q.
+                  Sơn Trà, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">01</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">14</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>4 giờ trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 11 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-orange-500 text-2xl">school</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Gia sư Toán lớp 8 (Tại nhà)</h3>
+                  <p class="text-sm text-[#4c669a]">Gia đình học sinh • Cẩm Lệ, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 text-[10px] font-bold rounded uppercase tracking-wider border border-blue-200 dark:border-blue-500/30">Buổi
+                  tối</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">3 buổi/tuần</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">19:00 - 20:30</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">120.000đ -
+                160.000đ/buổi</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>Khu vực Hòa Xuân, P. Hòa Xuân, Q.
+                  Cẩm Lệ, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">01</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">6</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>1 ngày trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 12 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-blue-400 text-2xl">inventory</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Phụ kho / Dán tem (Part-time)</h3>
+                  <p class="text-sm text-[#4c669a]">Kho TMĐT • Liên Chiểu, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 text-[10px] font-bold rounded uppercase tracking-wider border border-green-200 dark:border-green-500/30">Đi
+                  làm ngay</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Thứ 2 - Thứ 7</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">13:00 - 17:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">30.000đ -
+                36.000đ/giờ</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>Đường Hoàng Thị Loan, P. Hòa Minh,
+                  Q. Liên Chiểu, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">04</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">33</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>5 giờ trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 13 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-primary text-2xl">fitness_center</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Lễ tân phòng gym (Part-time)</h3>
+                  <p class="text-sm text-[#4c669a]">Phòng tập • Hải Châu, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 text-[10px] font-bold rounded uppercase tracking-wider border border-blue-200 dark:border-blue-500/30">Giao
+                  tiếp</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Theo ca</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">06:00 - 10:00</span>
+                </div>
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10 opacity-70">
+                  <span class="text-sm font-medium text-[#4c669a]">16:00 - 20:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">28.000đ -
+                34.000đ/giờ</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>220 Núi Thành, P. Hòa Cường Bắc,
+                  Q. Hải Châu, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">02</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">16</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>2 ngày trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 14 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-orange-500 text-2xl">coffee</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Barista (Trainee/Part-time)</h3>
+                  <p class="text-sm text-[#4c669a]">Quán cà phê • Ngũ Hành Sơn, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 text-[10px] font-bold rounded uppercase tracking-wider border border-blue-200 dark:border-blue-500/30">Đào
+                  tạo</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Ca sáng</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">07:00 - 12:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">27.000đ -
+                33.000đ/giờ</span>
+              <span class="text-xs text-[#4c669a]">+ tip</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>66 Châu Thị Vĩnh Tế, P. Mỹ An, Q.
+                  Ngũ Hành Sơn, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">02</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">22</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>6 giờ trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 15 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-blue-400 text-2xl">local_shipping</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Phụ xe giao hàng (Ca sáng)</h3>
+                  <p class="text-sm text-[#4c669a]">Nhà phân phối • Thanh Khê, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 text-[10px] font-bold rounded uppercase tracking-wider border border-green-200 dark:border-green-500/30">Thể
+                  lực</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Thứ 2 - Thứ 7</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">06:30 - 11:30</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">32.000đ -
+                42.000đ/giờ</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>150 Điện Biên Phủ, P. Chính Gián,
+                  Q. Thanh Khê, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">02</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">19</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>Hôm nay</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 16 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-purple-500 text-2xl">shopping_cart</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Nhân viên quầy rau củ (Part-time)</h3>
+                  <p class="text-sm text-[#4c669a]">Siêu thị • Hải Châu, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 text-[10px] font-bold rounded uppercase tracking-wider border border-green-200 dark:border-green-500/30">Ca
+                  sáng</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">6 ngày/tuần</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">07:00 - 11:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">26.000đ -
+                30.000đ/giờ</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>15 Lê Duẩn, P. Hải Châu I, Q. Hải
+                  Châu, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">03</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">25</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>2 ngày trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 17 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-blue-400 text-2xl">construction</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Phụ việc sửa chữa điện nước (Theo giờ)</h3>
+                  <p class="text-sm text-[#4c669a]">Đội kỹ thuật • Hòa Vang, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-400 text-[10px] font-bold rounded uppercase tracking-wider border border-orange-200 dark:border-orange-500/30">Có
+                  hướng dẫn</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Linh hoạt</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">08:00 - 12:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">40.000đ -
+                60.000đ/giờ</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>Khu vực Hòa Phong, H. Hòa Vang, Đà
+                  Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">02</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">8</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>1 tuần trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 18 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-primary text-2xl">medical_services</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Phụ tá nha khoa (Part-time)</h3>
+                  <p class="text-sm text-[#4c669a]">Phòng khám • Hải Châu, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 text-[10px] font-bold rounded uppercase tracking-wider border border-blue-200 dark:border-blue-500/30">Ưu
+                  tiên kinh nghiệm</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Theo ca</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">17:00 - 20:30</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">35.000đ -
+                50.000đ/giờ</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>248 Nguyễn Tri Phương, P. Thạc
+                  Gián, Q. Thanh Khê, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">01</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">7</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>3 ngày trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 19 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-orange-500 text-2xl">edit</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Cộng tác viên nhập liệu (Tại văn phòng)</h3>
+                  <p class="text-sm text-[#4c669a]">Công ty dịch vụ • Hải Châu, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 text-[10px] font-bold rounded uppercase tracking-wider border border-green-200 dark:border-green-500/30">Gọn
+                  nhẹ</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Thứ 2 - Thứ 6</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">08:00 - 12:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">25.000đ -
+                32.000đ/giờ</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>34 Nguyễn Chí Thanh, P. Hải Châu
+                  I, Q. Hải Châu, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">02</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">12</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>Hôm nay</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 20 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-blue-400 text-2xl">local_laundry_service</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Nhân viên giặt sấy (Part-time)</h3>
+                  <p class="text-sm text-[#4c669a]">Tiệm giặt • Thanh Khê, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 text-[10px] font-bold rounded uppercase tracking-wider border border-green-200 dark:border-green-500/30">Ca
+                  chiều</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">6 ngày/tuần</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">14:00 - 19:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">25.000đ -
+                30.000đ/giờ</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>80 Hà Huy Tập, P. Thanh Khê Tây,
+                  Q. Thanh Khê, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">01</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">10</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>2 ngày trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 21 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-primary text-2xl">phone_in_talk</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Telesales (Part-time)</h3>
+                  <p class="text-sm text-[#4c669a]">Trung tâm dịch vụ • Hải Châu, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 text-[10px] font-bold rounded uppercase tracking-wider border border-blue-200 dark:border-blue-500/30">Có
+                  hoa hồng</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Thứ 2 - Thứ 6</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">09:00 - 12:00</span>
+                </div>
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10 opacity-70">
+                  <span class="text-sm font-medium text-[#4c669a]">14:00 - 17:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">25.000đ -
+                30.000đ/giờ</span>
+              <span class="text-xs text-[#4c669a]">+ hoa hồng</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>120 Phan Đăng Lưu, P. Hòa Cường
+                  Bắc, Q. Hải Châu, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">03</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">21</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>5 giờ trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 22 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-orange-500 text-2xl">photo_camera</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    CTV chụp ảnh sản phẩm (Theo job)</h3>
+                  <p class="text-sm text-[#4c669a]">Shop online • Hải Châu, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 text-[10px] font-bold rounded uppercase tracking-wider border border-blue-200 dark:border-blue-500/30">Theo
+                  đơn</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Hẹn lịch</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">2-3 buổi/tuần</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">150.000đ -
+                250.000đ/buổi</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>72 Nguyễn Hoàng, P. Bình Hiên, Q.
+                  Hải Châu, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">01</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">5</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>4 ngày trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 23 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-blue-400 text-2xl">engineering</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Phụ hồ công trình nhỏ (Theo ngày)</h3>
+                  <p class="text-sm text-[#4c669a]">Đội thi công • Cẩm Lệ, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-400 text-[10px] font-bold rounded uppercase tracking-wider border border-orange-200 dark:border-orange-500/30">Theo
+                  ngày</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Thứ 2 - Thứ 7</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">07:00 - 16:30</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">300.000đ -
+                380.000đ/ngày</span>
+              <span class="text-xs text-[#4c669a]">+ cơm</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>Khu vực Khuê Trung, P. Khuê Trung,
+                  Q. Cẩm Lệ, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">03</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">13</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>1 tuần trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+          <!-- JOB 24 -->
+          <div
+            class="bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 rounded-xl p-5 hover:shadow-lg transition-all group flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div class="flex gap-4">
+                <div
+                  class="size-12 rounded-lg bg-gray-50 dark:bg-white/10 flex items-center justify-center border border-[#e7ebf3] dark:border-white/10 shrink-0">
+                  <span class="material-symbols-outlined text-primary text-2xl">storefront</span>
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-[#0d121b] dark:text-white group-hover:text-primary transition-colors leading-snug">
+                    Nhân viên đóng gói (Part-time)</h3>
+                  <p class="text-sm text-[#4c669a]">Shop mỹ phẩm • Sơn Trà, Đà Nẵng</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span
+                  class="px-2 py-0.5 bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 text-[10px] font-bold rounded uppercase tracking-wider border border-green-200 dark:border-green-500/30">Gọn
+                  nhẹ</span>
+                <button class="text-[#4c669a] hover:text-red-500 transition-colors"><span
+                    class="material-symbols-outlined text-xl">favorite</span></button>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 dark:bg-primary/5 rounded-lg p-3 mb-4 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Thời gian làm việc</span>
+                <span class="text-[10px] text-[#4c669a]">Thứ 2 - Thứ 7</span>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10">
+                  <span class="material-symbols-outlined text-primary text-sm">schedule</span>
+                  <span class="text-sm font-bold text-[#0d121b] dark:text-white">09:00 - 13:00</span>
+                </div>
+                <div
+                  class="flex items-center gap-2 bg-white dark:bg-white/10 px-2 py-1.5 rounded border border-[#e7ebf3] dark:border-white/10 opacity-70">
+                  <span class="text-sm font-medium text-[#4c669a]">14:30 - 18:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">26.000đ -
+                32.000đ/giờ</span>
+            </div>
+
+            <div class="text-xs text-[#4c669a] space-y-1 mb-6">
+              <div class="flex items-start gap-2"><span
+                  class="material-symbols-outlined text-base">location_on</span><span>09 Phạm Văn Đồng, P. An Hải Bắc,
+                  Q. Sơn Trà, Đà Nẵng</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">group</span><span>Cần tuyển: <b
+                    class="text-[#0d121b] dark:text-white">02</b> người</span></div>
+              <div class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-base">verified</span><span>Đã tuyển qua JobPortal: <b
+                    class="text-[#0d121b] dark:text-white">17</b> người</span></div>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-[#e7ebf3] dark:border-white/10">
+              <div class="flex items-center gap-2 text-xs text-[#4c669a]"><span
+                  class="material-symbols-outlined text-base">history</span><span>8 giờ trước</span></div>
+              <a href="detail.html"
+                class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">Ứng
+                tuyển</a>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="flex justify-center py-6">
+          <button
+            class="flex items-center gap-2 bg-white dark:bg-white/5 border border-[#e7ebf3] dark:border-white/10 px-8 py-3 rounded-xl text-sm font-bold hover:border-primary hover:text-primary transition-all shadow-sm">
+            <span>Xem thêm việc làm</span>
+            <span class="material-symbols-outlined">expand_more</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div
+    class="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t border-[#e7ebf3] dark:border-white/10 px-6 py-3 flex justify-between items-center z-50">
+    <button class="flex flex-col items-center gap-1 text-primary">
+      <span class="material-symbols-outlined">home</span>
+      <span class="text-[10px] font-bold">Khám phá</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-[#4c669a]">
+      <span class="material-symbols-outlined">favorite</span>
+      <span class="text-[10px] font-bold">Yêu thích</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-[#4c669a]">
+      <span class="material-symbols-outlined">work</span>
+      <span class="text-[10px] font-bold">Của tôi</span>
+    </button>
+    <button class="flex flex-col items-center gap-1 text-[#4c669a]">
+      <span class="material-symbols-outlined">account_circle</span>
+      <span class="text-[10px] font-bold">Cá nhân</span>
+    </button>
+  </div>
+
+</body>
+
+</html>

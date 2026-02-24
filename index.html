@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Trang Đăng nhập Đa năng | JobSync</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
+    <div class="flex min-h-screen w-full">
+        <!-- Visual Section (Left Side - Hidden on small screens) -->
+        <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-primary items-center justify-center p-12">
+            <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center"
+                data-alt="Students collaborating together in a modern library workspace"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLbAQmIAa2jDUGh1Z-Mca2Oyvm_dmRdngN4r1Dq69Xj1SHxYALsLAHarjqw_JL9fYp8ILnahSOpHlqg5cKv7FNgSJf4EIxZ0Wp6Q-XJ_67QUSzTHfsIzS29npMPkd8G3vK1K9je62tbKEsVBE_c_Wig7Pi4fKWw5tzYZNtkYNVjNoDI6wNWg_lhL9Qqj30WkoolijHORvKG2xtKywKgooH1fXLrs9MaCZHPe_WPHqc9ENtgwN0qN0YQuN-wRQ9naYBOvFJP-24RN8');">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/80 to-blue-900/90 z-10"></div>
+            <div class="relative z-20 text-white max-w-lg">
+                <div class="mb-8">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="material-symbols-outlined text-4xl">work</span>
+                        <h2 class="text-3xl font-bold tracking-tight">JobSync</h2>
+                    </div>
+                    <h1 class="text-5xl font-bold leading-tight mb-6">Kết nối sinh viên với cơ hội việc làm mơ ước.</h1>
+                    <p class="text-lg text-blue-100 leading-relaxed">
+                        Hàng ngàn công việc bán thời gian và thực tập đang chờ đón bạn. Khám phá ngay những doanh nghiệp
+                        hàng đầu đang tìm kiếm nhân tài như bạn.
+                    </p>
+                </div>
+                <div class="flex gap-4 mt-12">
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-bold">15k+</span>
+                        <span class="text-sm text-blue-200 uppercase tracking-wider">Sinh viên</span>
+                    </div>
+                    <div class="w-px h-12 bg-white/20"></div>
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-bold">500+</span>
+                        <span class="text-sm text-blue-200 uppercase tracking-wider">Doanh nghiệp</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login Form Section (Right Side) -->
+        <div
+            class="w-full lg:w-1/2 flex flex-col justify-center items-center p-6 sm:p-12 bg-background-light dark:bg-background-dark">
+            <div class="w-full max-w-[480px]">
+                <!-- Header -->
+                <div class="mb-8">
+                    <h2 class="text-[#0d121b] dark:text-white tracking-tight text-[32px] font-bold leading-tight pb-2">
+                        Chào mừng bạn quay lại!</h2>
+                    <p class="text-[#4c669a] dark:text-gray-400">Vui lòng đăng nhập để tiếp tục hành trình của bạn.</p>
+                </div>
+                <!-- Role Tabs -->
+                <div class="pb-6">
+                    <div class="flex border-b border-[#cfd7e7] dark:border-gray-700 gap-8">
+                        <a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4 transition-all"
+                            href="#">
+                            <p class="text-sm font-bold leading-normal tracking-[0.015em]">Sinh viên</p>
+                        </a>
+                        <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4c669a] dark:text-gray-500 pb-[13px] pt-4 hover:text-primary transition-all"
+                            href="#">
+                            <p class="text-sm font-bold leading-normal tracking-[0.015em]">Nhà tuyển dụng</p>
+                        </a>
+                    </div>
+                </div>
+                <!-- Form Fields -->
+                <form class="space-y-4">
+                    <div class="flex flex-col gap-1">
+                        <label class="flex flex-col w-full">
+                            <p class="text-[#0d121b] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Tài
+                                khoản</p>
+                            <input
+                                class="form-input flex w-full rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary h-14 placeholder:text-[#4c669a] dark:placeholder:text-gray-500 p-[15px] text-base font-normal transition-all"
+                                placeholder="Nhập tài khoản" type="text" />
+                        </label>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label class="flex flex-col w-full">
+                            <p class="text-[#0d121b] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Mật
+                                khẩu</p>
+                            <div class="relative flex w-full items-stretch rounded-lg">
+                                <input
+                                    class="form-input flex w-full rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary h-14 placeholder:text-[#4c669a] dark:placeholder:text-gray-500 p-[15px] text-base font-normal transition-all"
+                                    placeholder="Nhập mật khẩu" type="password" />
+                                <button
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 text-[#4c669a] hover:text-primary dark:text-gray-400"
+                                    type="button">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between py-2">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4"
+                                type="checkbox" />
+                            <span class="text-sm text-[#4c669a] dark:text-gray-400">Ghi nhớ đăng nhập</span>
+                        </label>
+                        <a class="text-sm font-semibold text-primary hover:underline" href="#">Quên mật khẩu?</a>
+                    </div>
+                    <div class="space-y-3">
+                        <button
+                            class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition-colors shadow-lg shadow-primary/20 flex items-center justify-center gap-2"
+                            type="submit">
+                            Đăng nhập
+                            <span class="material-symbols-outlined">login</span>
+                        </button>
+
+                        <button id="btn-verify-business"
+                            class="w-full bg-white dark:bg-gray-800 border-2 border-primary text-primary hover:bg-primary/5 font-bold py-3.5 px-6 rounded-lg transition-all flex items-center justify-center gap-2"
+                            type="button">
+                            Xác thực doanh nghiệp
+                            <span class="material-symbols-outlined text-[20px]">verified_user</span>
+                        </button>
+                    </div>
+                </form>
+                <!-- Divider -->
+                <div class="relative my-8">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-[#cfd7e7] dark:border-gray-700"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span
+                            class="bg-background-light dark:bg-background-dark px-4 text-[#4c669a] dark:text-gray-400 font-medium">Hoặc
+                            đăng nhập bằng</span>
+                    </div>
+                </div>
+                <!-- Social Logins -->
+                <div class="grid grid-cols-2 gap-4">
+                    <button
+                        class="flex items-center justify-center gap-3 h-12 px-4 border border-[#cfd7e7] dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                        <svg class="w-5 h-5" viewbox="0 0 24 24">
+                            <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                fill="#4285F4"></path>
+                            <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                fill="#34A853"></path>
+                            <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                fill="#FBBC05"></path>
+                            <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                fill="#EA4335"></path>
+                        </svg>
+                        <span class="text-sm font-semibold text-[#0d121b] dark:text-white">Google</span>
+                    </button>
+                    <button
+                        class="flex items-center justify-center gap-3 h-12 px-4 border border-[#cfd7e7] dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                        <svg class="w-6 h-6" fill="#1877F2" viewbox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
+                            </path>
+                        </svg>
+                        <span class="text-sm font-semibold text-[#0d121b] dark:text-white">Facebook</span>
+                    </button>
+                </div>
+                <!-- Footer -->
+                <p class="mt-10 text-center text-sm text-[#4c669a] dark:text-gray-400">
+                    Chưa có tài khoản?
+                    <a class="font-bold text-primary hover:underline" href="#">Đăng ký ngay</a>
+                </p>
+            </div>
+            <!-- Company Links -->
+            <div
+                class="mt-auto pt-8 flex gap-6 text-xs text-[#4c669a] dark:text-gray-500 uppercase tracking-widest font-semibold">
+                <a class="hover:text-primary" href="#">Điều khoản</a>
+                <a class="hover:text-primary" href="#">Bảo mật</a>
+                <a class="hover:text-primary" href="#">Liên hệ</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lấy form và các trường nhập liệu
+        const loginForm = document.querySelector('form');
+        const usernameInput = document.querySelector('input[placeholder="Nhập tài khoản"]');
+        const passwordInput = document.querySelector('input[placeholder="Nhập mật khẩu"]');
+        // Xử lý chuyển hướng cho nút Xác thực doanh nghiệp
+        const verifyBusinessBtn = document.getElementById('btn-verify-business');
+        verifyBusinessBtn.addEventListener('click', () => {
+            window.location.href = 'xac-thuc-doanh-nghiep.html';
+        });
+
+        loginForm.addEventListener('submit', function (e) {
+            // Ngăn chặn form load lại trang theo mặc định
+            e.preventDefault();
+
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            // Logic kiểm tra đăng nhập
+            if (username === 'admin' && password === 'admin') {
+                // Chuyển hướng đến trang admin
+                window.location.href = 'admin.html';
+            }
+            else if (username === 'thanh' && password === 'thanh') {
+                // Chuyển hướng đến trang chủ
+                window.location.href = 'home.html';
+            }
+            else {
+                // Thông báo nếu sai tài khoản/mật khẩu
+                alert('Tài khoản hoặc mật khẩu không chính xác!');
+            }
+        });
+
+        // Xử lý nút ẩn/hiện mật khẩu (tiện ích thêm)
+        const togglePassBtn = document.querySelector('button[type="button"]');
+        togglePassBtn.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            togglePassBtn.querySelector('span').textContent = type === 'password' ? 'visibility' : 'visibility_off';
+        });
+    </script>
+</body>
+
+</html>

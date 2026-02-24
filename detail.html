@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Chi tiết công việc - Khung giờ tuyển dụng - UniJob</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#0d121b] dark:text-white">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7ebf3] dark:border-b-gray-800 px-10 py-3 bg-white dark:bg-background-dark sticky top-0 z-50">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-4 text-primary">
+                        <div class="size-6">
+                            <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-[#0d121b] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">
+                            UniJob</h2>
+                    </div>
+                    <label class="flex flex-col min-w-40 !h-10 max-w-64">
+                        <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                            <div
+                                class="text-[#4c669a] flex border-none bg-[#e7ebf3] dark:bg-gray-800 items-center justify-center pl-4 rounded-l-lg">
+                                <span class="material-symbols-outlined text-xl">search</span>
+                            </div>
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 border-none bg-[#e7ebf3] dark:bg-gray-800 text-[#0d121b] dark:text-white focus:ring-0 h-full placeholder:text-[#4c669a] px-4 rounded-r-lg pl-2 text-base font-normal"
+                                placeholder="Tìm kiếm công việc..." value="" />
+                        </div>
+                    </label>
+                </div>
+                <div class="flex flex-1 justify-end gap-8">
+                    <nav class="flex items-center gap-6">
+                        <a class="text-primary text-sm font-semibold leading-normal" href="#">Tìm công việc</a>
+                        <a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium leading-normal" href="#">Lịch
+                            của tôi</a>
+                        <a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium leading-normal" href="#">Nhà
+                            tuyển dụng</a>
+                    </nav>
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary/20"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTBgR39Mz9TKuxbn-rvz7cr2cHK9gSeK08zSui4bdp_M0gs9tPz43rxG8UZxzkUFqYZwy4j_jTkgWAU-FjrAHWG-XrTTjNJwld0tpz_n3-l-Untl2nqvNrWXqGLUxkhbRAUnBaqz1dgIJ3lWc8WXt2i5HtLvNAqSWCDW_Be9M7A6fuhHU3mjisdefLmnGgA9oFAWbRjHpoQF8TOrSkhHm_rhWf0qffenM9Og06JOI6kYV0lylRwZ2aHfFT8EY6UrZ7B4vjOOU27m0");'>
+                    </div>
+                </div>
+            </header>
+            <main class="max-w-[1200px] mx-auto w-full px-4 py-8">
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <a class="text-[#4c669a] text-sm font-medium" href="#">Trang chủ</a>
+                    <span class="text-[#4c669a] text-sm">/</span>
+                    <a class="text-[#4c669a] text-sm font-medium" href="#">Việc làm part-time</a>
+                    <span class="text-[#4c669a] text-sm">/</span>
+                    <span class="text-primary text-sm font-medium">Chi tiết công việc</span>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="flex-1 flex flex-col gap-6">
+                        <div
+                            class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-[#e7ebf3] dark:border-gray-800 shadow-sm">
+                            <div class="flex flex-wrap justify-between gap-4 mb-6">
+                                <div class="flex flex-col gap-3">
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">Tin
+                                            nổi bật</span>
+                                        <span class="text-[#4c669a] text-xs">• 2 ngày trước</span>
+                                    </div>
+                                    <h1
+                                        class="text-[#0d121b] dark:text-white text-3xl font-black leading-tight tracking-[-0.033em]">
+                                        Pha chế Barista Full-time/Part-time</h1>
+                                    <div class="flex items-center gap-2 text-[#4c669a]">
+                                        <span class="material-symbols-outlined text-sm">location_on</span>
+                                        <p class="text-base font-normal">Urban Coffee Co. • Quận 1, TP. Hồ Chí Minh</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <button
+                                        class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#e7ebf3] dark:bg-gray-800 text-[#0d121b] dark:text-white"
+                                        title="Lưu tin">
+                                        <span class="material-symbols-outlined text-lg">bookmark</span>
+                                    </button>
+                                    <button
+                                        class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#e7ebf3] dark:bg-gray-800 text-[#0d121b] dark:text-white"
+                                        title="Chia sẻ">
+                                        <span class="material-symbols-outlined text-lg">share</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-col md:flex-row md:justify-between md:items-center border-t border-[#e7ebf3] dark:border-gray-800 pt-6">
+                                <div class="flex gap-4">
+                                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl min-h-16 w-16"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2glvZl72Z0ML8clcOgHGs1C4FxZN5EWCqtgHqsxfjVGafQOUY4c8Mf5WrGRacjzJ2FSs2QIq9li7uXpdDNKIS1lXVIzPh5nMkN8A0Ng3SuXvIpwcjsgGexeAn5CH2ihNSNj2sxmoRGR6G39_gTAaam3krPBEPeSbbaksa3Spul_ou1PGhYlTLwsF7PtgpEbi6MKQjSEz-hC7CuEVlks1JTr2QSmLoiVfQPt-T3688SzlKLscQaG4Bd2Oi41e7pAPWwS7QiNb34FY");'>
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <div class="flex items-center gap-2">
+                                            <p class="text-[#0d121b] dark:text-white text-lg font-bold leading-tight">
+                                                Urban Coffee Co.</p>
+                                            <span class="material-symbols-outlined text-blue-500 text-sm"
+                                                title="Verified">verified</span>
+                                        </div>
+                                        <p class="text-[#4c669a] text-sm">Nhà tuyển dụng xác thực • Hoạt động 2 giờ
+                                            trước</p>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span class="material-symbols-outlined text-orange-400 text-sm"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <p class="text-[#0d121b] dark:text-white text-sm font-bold">4.8</p>
+                                            <p class="text-[#4c669a] text-sm ml-1">• 150+ Sinh viên ứng tuyển</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex gap-3 mt-4 md:mt-0">
+                                    <button
+                                        class="flex-1 md:flex-none items-center justify-center rounded-lg h-10 px-6 border border-primary text-primary text-sm font-bold hover:bg-primary/5 transition-colors">
+                                        Nhắn tin
+                                    </button>
+                                    <button
+                                        class="flex-1 md:flex-none items-center justify-center rounded-lg h-10 px-6 bg-primary/10 text-primary text-sm font-bold hover:bg-primary/20 transition-colors">
+                                        Theo dõi
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-[#e7ebf3] dark:border-gray-800 shadow-sm">
+                            <h3 class="text-[#0d121b] dark:text-white text-lg font-bold mb-4">Hình ảnh nơi làm việc</h3>
+                            <div class="grid grid-cols-3 gap-3">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg cursor-zoom-in"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8F4GyYx67yiYaFXru1EdKZk5nN3QwPaSQ118JI1j-7suHkTAJN4kFoW_gB_TwuaFXmjZQNWAGr7XXHQLUGaibug60JZA5okbnI2iXOWBfyzYMXcPlGD0tMMv2vDR2PRCKc4KqlwXj8si_C4zoUwD3fRckoboPZXkD_yWXnuxAS2ZjECjUFlbeeOYBWfsleoJ1BWPQg3GXO6wv467nu9AjRk-Cyldpz3JzjY9jqdLEZJMV37phP-hqEEy7UJdr6QP5BEK0rkgI6H8");'>
+                                </div>
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg cursor-zoom-in"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAg3BLeFOh3wBFcyKn0HQBfwYLR4pw6SwTr3T1o-EAGeRRnitCZCwitpKXI8Ot6jbv7jE1nc2kgd3fGAlyjTa53NslobDg3Cgrn_ofUEOO8qlhV-zf7JSocBsjeOt2L07jw1p-A-fJZ4GNrdZl9PW5ax0sWb8QeSM2avQvGKHyZEDleH0YlY6cLnkXoLmlaAvYktwv98HNeRwCd8S9AzWfLGAdFNLm2ZnY0CaYIT4M6v4j4ICHk0YUepnV9jqRoAnIQ8PT3VpjpGQg");'>
+                                </div>
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg cursor-zoom-in"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAtRM2YudOZPE8_Fzzv7hAd_zsfY3ixyZaQSM6zB2xfTob7cqxgMPolcmyF_LA4NXswy8JsU1u0bFVYWr-Du9m_Wofwg9OtkTWxYGe5Jig0ZgUZWvijjb0xWYLDfmlhRFFXJPFXjr5_N3wjkAqzxPJQSIgMGuR5aB_HMG7Pphxk1ZVVhX9xrZf94M1u_Cep-k68_ZCZ3_cd57DjxKVnombOrKkxipKCFWiy39V5SWrkXo_FQk02YGlK1VxXJBtOQSgdIjWUxOGWWPo");'>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-[#e7ebf3] dark:border-gray-800 shadow-sm">
+                            <h3 class="text-[#0d121b] dark:text-white text-lg font-bold mb-4">Mô tả công việc</h3>
+                            <div class="space-y-4 text-[#4c669a] dark:text-gray-300 leading-relaxed text-base">
+                                <p>Chúng tôi đang tìm kiếm những bạn sinh viên năng động, yêu thích nghệ thuật pha chế
+                                    để gia nhập đội ngũ Barista tại chi nhánh Quận 1. Bạn sẽ được làm việc trong môi
+                                    trường hiện đại, trẻ trung và được đào tạo bài bản.</p>
+                                <div class="mt-4">
+                                    <h4 class="text-[#0d121b] dark:text-white font-bold mb-2">Nhiệm vụ chính:</h4>
+                                    <ul class="list-disc pl-5 space-y-2">
+                                        <li>Chuẩn bị nguyên liệu và pha chế các loại đồ uống theo menu của quán (Coffee,
+                                            Tea, Smoothies).</li>
+                                        <li>Đảm bảo vệ sinh khu vực quầy bar và dụng cụ pha chế theo tiêu chuẩn 5S.</li>
+                                        <li>Tư vấn và phục vụ khách hàng với thái độ chuyên nghiệp, thân thiện.</li>
+                                        <li>Hỗ trợ thanh toán và các công việc khác theo sự sắp xếp của quản lý.</li>
+                                    </ul>
+                                </div>
+                                <div class="mt-6">
+                                    <h4 class="text-[#0d121b] dark:text-white font-bold mb-2">Yêu cầu công việc:</h4>
+                                    <ul class="list-disc pl-5 space-y-2">
+                                        <li>Ưu tiên các bạn sinh viên có thể làm việc xoay ca linh hoạt.</li>
+                                        <li>Không yêu cầu kinh nghiệm (sẽ được đào tạo từ A-Z).</li>
+                                        <li>Trung thực, nhanh nhẹn và có tinh thần trách nhiệm cao.</li>
+                                        <li>Kỹ năng giao tiếp tốt, tiếng Anh cơ bản là một lợi thế.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-[#e7ebf3] dark:border-gray-800 shadow-sm">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-[#0d121b] dark:text-white text-lg font-bold">Đánh giá từ sinh viên</h3>
+                                <button class="text-primary text-sm font-bold hover:underline">Xem tất cả 24 đánh
+                                    giá</button>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="flex flex-col gap-3 pb-6 border-b border-[#e7ebf3] dark:border-gray-800">
+                                    <div class="flex justify-between items-start">
+                                        <div class="flex gap-3">
+                                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB9niBmsruiXMgVJnA2tzCzXMGHHZU89HtyQCOwQn7-GnFAYNiC6yCYnIC2YUvIHTwkVdvgktcU_4LRxc3QwV1t7n3hrR5XwO3DgiCeNxmRBIbGxg8eO4Yo1EKYaVJyruCJ4NkScfHPyjbd-q5cdK1cDSOKUB98r3ctudaPJbpDvjb8ql4S0RqQtWKaNPvfiSGWXoUxi1E0xjpwuIsZhrsApeNJ-9rlKxeyEd4_VBjelW6rWs-wAFOL0a09FvFTeeYn6UfKfR-Hb4E");'>
+                                            </div>
+                                            <div>
+                                                <p class="text-[#0d121b] dark:text-white font-bold text-sm">Nguyễn Minh
+                                                    Anh</p>
+                                                <p class="text-[#4c669a] text-xs">Sinh viên ĐH Kinh Tế • Đã làm 6 tháng
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-0.5 text-orange-400">
+                                            <span class="material-symbols-outlined text-sm"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-sm"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-sm"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-sm"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-sm"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-[#4c669a] dark:text-gray-300 text-sm">"Môi trường làm việc rất chuyên
+                                        nghiệp và thân thiện. Anh chủ rất tạo điều kiện cho mình đổi ca khi có lịch học
+                                        đột xuất. Lương thanh toán đúng hạn."</p>
+                                    <div class="flex items-center gap-4 text-xs font-medium text-[#4c669a]">
+                                        <button class="flex items-center gap-1 hover:text-primary"><span
+                                                class="material-symbols-outlined text-base">thumb_up</span> Hữu ích
+                                            (12)</button>
+                                        <span>2 tuần trước</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-3">
+                                    <div class="flex justify-between items-start">
+                                        <div class="flex gap-3">
+                                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAcYwlrqJ5f-A59TuF7Qthw3RfvfKdlBfWTm7kwDHTPKKVoHRFPtZacl9N0qkY9DGYgljkjQTp3a5yu3J_exROGI-c9MRAbLh7E5GmIfqMsIGjkZ1Ed27xpZfF7e1oNNqMc5MK08xoWGbp9jno87SzDZirBT0FMLChQ2ytxvHEHWS3ebrv920cwWweKbNDfQsQe2hDHhaAf96vohaYabM0myauyjAIw0MSWZiRAlpwJPPtNxjQ4UXdOgTfMDcU_EM9kxhhqml-tjjo");'>
+                                            </div>
+                                            <div>
+                                                <p class="text-[#0d121b] dark:text-white font-bold text-sm">Trần Hoàng
+                                                    Long</p>
+                                                <p class="text-[#4c669a] text-xs">Sinh viên ĐH Bách Khoa • Đã làm 3
+                                                    tháng</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-0.5 text-orange-400">
+                                            <span class="material-symbols-outlined text-sm"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-sm"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-sm"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-sm"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-sm text-gray-300">star</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-[#4c669a] dark:text-gray-300 text-sm">"Công việc hơi bận vào giờ cao
+                                        điểm nhưng bù lại đồng nghiệp rất vui vẻ. Học hỏi được nhiều kỹ năng pha chế
+                                        chuyên nghiệp."</p>
+                                    <div class="flex items-center gap-4 text-xs font-medium text-[#4c669a]">
+                                        <button class="flex items-center gap-1 hover:text-primary"><span
+                                                class="material-symbols-outlined text-base">thumb_up</span> Hữu ích
+                                            (5)</button>
+                                        <span>1 tháng trước</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-[380px] flex flex-col gap-6">
+                        <div
+                            class="bg-white dark:bg-gray-900 p-6 rounded-xl border border-[#e7ebf3] dark:border-gray-800 shadow-lg sticky top-24">
+                            <div class="flex flex-col gap-1 mb-6">
+                                <span class="text-[#4c669a] text-sm font-medium uppercase tracking-wider">Mức lương dự
+                                    kiến</span>
+                                <div class="flex items-baseline gap-1">
+                                    <h2 class="text-3xl font-black text-primary">25.000đ - 35.000đ</h2>
+                                    <span class="text-[#4c669a] font-bold">/giờ</span>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <h3
+                                    class="text-[#0d121b] dark:text-white text-lg font-bold mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">schedule</span>
+                                    Khung giờ tuyển dụng
+                                </h3>
+                                <div class="space-y-3">
+                                    <div
+                                        class="flex items-center justify-between p-3 rounded-lg bg-[#f0f4ff] dark:bg-primary/10 border border-primary/10">
+                                        <div class="flex flex-col">
+                                            <span class="text-[#0d121b] dark:text-white text-sm font-bold">Ca
+                                                sáng</span>
+                                            <span class="text-primary text-xs font-medium">Thứ 2 - Thứ 6</span>
+                                        </div>
+                                        <span
+                                            class="bg-white dark:bg-gray-800 px-3 py-1 rounded-md text-sm font-bold shadow-sm">08:00
+                                            - 12:00</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between p-3 rounded-lg bg-[#f8f9fb] dark:bg-gray-800/50 border border-[#e7ebf3] dark:border-gray-800">
+                                        <div class="flex flex-col">
+                                            <span
+                                                class="text-[#0d121b] dark:text-white text-sm font-bold text-opacity-80">Ca
+                                                chiều</span>
+                                            <span class="text-[#4c669a] text-xs font-medium">Thứ 2 - Thứ 7</span>
+                                        </div>
+                                        <span
+                                            class="bg-white dark:bg-gray-800 px-3 py-1 rounded-md text-sm font-bold shadow-sm text-[#4c669a]">13:00
+                                            - 17:00</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between p-3 rounded-lg bg-[#f8f9fb] dark:bg-gray-800/50 border border-[#e7ebf3] dark:border-gray-800">
+                                        <div class="flex flex-col">
+                                            <span
+                                                class="text-[#0d121b] dark:text-white text-sm font-bold text-opacity-80">Ca
+                                                tối</span>
+                                            <span class="text-[#4c669a] text-xs font-medium">Thứ 7 &amp; Chủ nhật</span>
+                                        </div>
+                                        <span
+                                            class="bg-white dark:bg-gray-800 px-3 py-1 rounded-md text-sm font-bold shadow-sm text-[#4c669a]">18:00
+                                            - 22:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-3 pt-4 border-t border-[#e7ebf3] dark:border-gray-800">
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-[#4c669a]">Hình thức:</span>
+                                    <span class="font-bold text-[#0d121b] dark:text-white">Bán thời gian</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-[#4c669a]">Số lượng:</span>
+                                    <span class="font-bold text-[#0d121b] dark:text-white">03 người</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-[#4c669a]">Kinh nghiệm:</span>
+                                    <span class="font-bold text-[#0d121b] dark:text-white">Không yêu cầu</span>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full mt-6 flex items-center justify-center rounded-xl h-14 bg-primary text-white text-lg font-bold shadow-lg shadow-primary/30 hover:bg-blue-700 transition-all transform active:scale-[0.98]">
+                                Ứng tuyển ngay
+                            </button>
+                            <div class="flex items-center justify-center gap-2 mt-4">
+                                <span class="material-symbols-outlined text-green-500 text-sm">bolt</span>
+                                <p class="text-center text-[11px] text-[#4c669a]">Nhà tuyển dụng phản hồi trong 24h</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-900 p-4 rounded-xl border border-[#e7ebf3] dark:border-gray-800 shadow-sm">
+                            <h4 class="text-sm font-bold mb-3 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[#4c669a] text-lg">map</span>
+                                Địa điểm làm việc
+                            </h4>
+                            <div
+                                class="w-full h-44 bg-gray-200 dark:bg-gray-800 rounded-lg relative overflow-hidden group">
+                                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAuVOr9cDNqh_rDItQWCdteA4GtsP19zIwSuijmpj0rHMW5t8K5QiSnGWDrhOt5mO3HWd1QSuMmRS6xd2pnfCqAdseSsCBIuoXyve3zE0yCjtBisfir6QL5xaIOUWBGA_ebca9wanhMvZb__Xmjj2GnGuMM90geTUWtzwFOsszHPsIQrAUjJ9r6CmVzy6e3C58aMU04ja5TPTtlfy0twC89r1Td8RNmQw1T1m2p20BNcX797wKSqdk3gX4DuDBxEp386P9H-6k0mZs");'>
+                                </div>
+                                <div class="absolute inset-0 bg-primary/5"></div>
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary">
+                                    <span class="material-symbols-outlined text-5xl"
+                                        style="font-variation-settings: 'FILL' 1;">location_on</span>
+                                </div>
+                                <button
+                                    class="absolute bottom-2 right-2 bg-white/90 dark:bg-gray-900/90 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm border border-black/5">Xem
+                                    bản đồ lớn</button>
+                            </div>
+                            <div class="mt-3">
+                                <p class="text-xs font-bold text-[#0d121b] dark:text-white">123 Lê Lợi, Phường Bến
+                                    Thành, Quận 1, TP. HCM</p>
+                                <p class="text-[11px] text-[#4c669a] mt-1 italic">Cách chỗ ở của bạn khoảng 2.5km</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer
+                class="bg-white dark:bg-background-dark border-t border-[#e7ebf3] dark:border-gray-800 py-10 px-10 mt-20">
+                <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-2 text-primary">
+                            <div class="size-6">
+                                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-[#0d121b] dark:text-white text-xl font-bold">UniJob</h2>
+                        </div>
+                        <p class="text-sm text-[#4c669a]">Nền tảng tìm kiếm việc làm part-time hàng đầu kiến tạo tương
+                            lai cho sinh viên Việt Nam.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm mb-4">Dành cho sinh viên</h4>
+                        <ul class="text-sm text-[#4c669a] space-y-2">
+                            <li><a class="hover:text-primary transition-colors" href="#">Khám phá công việc</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Quản lý lịch học</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Tạo hồ sơ chuyên nghiệp</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm mb-4">Dành cho đối tác</h4>
+                        <ul class="text-sm text-[#4c669a] space-y-2">
+                            <li><a class="hover:text-primary transition-colors" href="#">Đăng tin tuyển dụng</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Quản lý ứng viên</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Trung tâm trợ giúp</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm mb-4">Kết nối</h4>
+                        <div class="flex gap-4">
+                            <a class="size-9 rounded-full bg-[#e7ebf3] dark:bg-gray-800 flex items-center justify-center text-[#4c669a] hover:bg-primary hover:text-white transition-all"
+                                href="#">
+                                <span class="material-symbols-outlined text-sm">social_leaderboard</span>
+                            </a>
+                            <a class="size-9 rounded-full bg-[#e7ebf3] dark:bg-gray-800 flex items-center justify-center text-[#4c669a] hover:bg-primary hover:text-white transition-all"
+                                href="#">
+                                <span class="material-symbols-outlined text-sm">alternate_email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="max-w-[1200px] mx-auto mt-10 pt-6 border-t border-[#e7ebf3] dark:border-gray-800 text-center text-xs text-[#4c669a]">
+                    © 2024 UniJob Việt Nam. Chuyên trang việc làm sinh viên tốt nhất.
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

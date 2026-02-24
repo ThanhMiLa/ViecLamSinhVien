@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Xác minh Danh tính Nhà tuyển dụng</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-input:focus {
+            border-color: #135bec !important;
+            ring: 0 !important;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-[#0d121b] dark:text-white transition-colors duration-200">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Top Navigation Bar -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7ebf3] dark:border-b-gray-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+                <div class="flex items-center gap-4 text-[#0d121b] dark:text-white">
+                    <div class="size-6 text-primary">
+                        <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_6_535)">
+                                <path clip-rule="evenodd"
+                                    d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z"
+                                    fill="currentColor" fill-rule="evenodd"></path>
+                            </g>
+                            <defs>
+                                <clippath id="clip0_6_535">
+                                    <rect fill="white" height="48" width="48"></rect>
+                                </clippath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Part-time Job Platform</h2>
+                </div>
+            </header>
+            <main class="flex flex-1 justify-center py-8">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 px-4">
+                    <!-- Page Heading -->
+                    <div class="flex flex-wrap justify-between gap-3 mb-6">
+                        <div class="flex min-w-72 flex-col gap-2">
+                            <h1
+                                class="text-[#0d121b] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">
+                                Xác minh Danh tính Nhà tuyển dụng</h1>
+                            <p class="text-[#4c669a] dark:text-gray-400 text-base font-normal leading-normal">Vui lòng
+                                cung cấp thông tin chính xác để đảm bảo tính minh bạch và an toàn cho người tìm việc.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Progress Bar -->
+                    <div
+                        class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm mb-8 border border-[#e7ebf3] dark:border-gray-800">
+                        <div class="flex flex-col gap-3">
+                            <div class="flex gap-6 justify-between items-center">
+                                <p class="text-[#0d121b] dark:text-white text-base font-semibold leading-normal">Tiến
+                                    trình xác minh</p>
+                                <p
+                                    class="text-primary text-sm font-bold leading-normal bg-primary/10 px-2 py-1 rounded">
+                                    50% Hoàn tất</p>
+                            </div>
+                            <div class="rounded-full bg-[#cfd7e7] dark:bg-gray-700 h-2.5 overflow-hidden">
+                                <div class="h-full rounded-full bg-primary" style="width: 50%;"></div>
+                            </div>
+                            <div
+                                class="flex justify-between mt-2 text-xs font-medium text-[#4c669a] dark:text-gray-400">
+                                <div class="flex flex-col items-center gap-1 text-primary">
+                                    <span class="material-symbols-outlined text-sm">check_circle</span>
+                                    <span>Thông tin</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-1 text-primary">
+                                    <span class="material-symbols-outlined text-sm">radio_button_checked</span>
+                                    <span>Danh tính</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm">radio_button_unchecked</span>
+                                    <span>Kinh doanh</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm">radio_button_unchecked</span>
+                                    <span>Cơ sở</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="space-y-8 pb-20">
+                        <!-- Section 1: Thông tin cá nhân -->
+                        <div
+                            class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-[#e7ebf3] dark:border-gray-800 overflow-hidden">
+                            <h2 class="text-[#0d121b] dark:text-white text-xl font-bold leading-tight px-6 pt-6 pb-2">1.
+                                Thông tin cá nhân</h2>
+                            <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex flex-col gap-2">
+                                    <p class="text-[#0d121b] dark:text-gray-200 text-sm font-medium">Họ và tên chủ sở
+                                        hữu</p>
+                                    <input
+                                        class="form-input w-full rounded-lg text-[#0d121b] dark:text-white border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-gray-800 h-12 px-4 focus:ring-1 focus:ring-primary"
+                                        placeholder="Nguyễn Văn A" type="text" value="Nguyễn Văn An" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <p class="text-[#0d121b] dark:text-gray-200 text-sm font-medium">Số điện thoại liên
+                                        hệ</p>
+                                    <input
+                                        class="form-input w-full rounded-lg text-[#0d121b] dark:text-white border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-gray-800 h-12 px-4 focus:ring-1 focus:ring-primary"
+                                        placeholder="0901 234 567" type="tel" value="0987654321" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <p class="text-[#0d121b] dark:text-gray-200 text-sm font-medium">Ngày sinh</p>
+                                    <input
+                                        class="form-input w-full rounded-lg text-[#0d121b] dark:text-white border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-gray-800 h-12 px-4 focus:ring-1 focus:ring-primary"
+                                        type="date" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <p class="text-[#0d121b] dark:text-gray-200 text-sm font-medium">Email công việc</p>
+                                    <input
+                                        class="form-input w-full rounded-lg text-[#0d121b] dark:text-white border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-gray-800 h-12 px-4 focus:ring-1 focus:ring-primary"
+                                        placeholder="email@congty.com" type="email" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Section 2: Xác minh danh tính -->
+                        <div
+                            class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-[#e7ebf3] dark:border-gray-800 overflow-hidden">
+                            <h2 class="text-[#0d121b] dark:text-white text-xl font-bold leading-tight px-6 pt-6 pb-2">2.
+                                Xác minh danh tính</h2>
+                            <p class="px-6 text-[#4c669a] dark:text-gray-400 text-sm">Chụp ảnh rõ nét CCCD/CMND mặt
+                                trước và mặt sau.</p>
+                            <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex flex-col gap-3">
+                                    <span class="text-sm font-medium text-[#0d121b] dark:text-gray-200">Mặt trước
+                                        CCCD</span>
+                                    <div
+                                        class="border-2 border-dashed border-[#cfd7e7] dark:border-gray-700 rounded-xl p-8 flex flex-col items-center justify-center gap-3 bg-[#f8f9fc] dark:bg-gray-800 hover:border-primary transition-colors cursor-pointer group">
+                                        <div
+                                            class="bg-white dark:bg-gray-700 p-3 rounded-full shadow-sm text-primary group-hover:scale-110 transition-transform">
+                                            <span class="material-symbols-outlined text-3xl">add_a_photo</span>
+                                        </div>
+                                        <p class="text-sm text-[#4c669a] dark:text-gray-400 font-medium">Nhấp để tải lên
+                                            hoặc kéo thả</p>
+                                        <p class="text-xs text-[#4c669a]/70 dark:text-gray-500">PNG, JPG tối đa 5MB</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-3">
+                                    <span class="text-sm font-medium text-[#0d121b] dark:text-gray-200">Mặt sau
+                                        CCCD</span>
+                                    <div
+                                        class="border-2 border-dashed border-[#cfd7e7] dark:border-gray-700 rounded-xl p-8 flex flex-col items-center justify-center gap-3 bg-[#f8f9fc] dark:bg-gray-800 hover:border-primary transition-colors cursor-pointer group">
+                                        <div
+                                            class="bg-white dark:bg-gray-700 p-3 rounded-full shadow-sm text-primary group-hover:scale-110 transition-transform">
+                                            <span class="material-symbols-outlined text-3xl">add_a_photo</span>
+                                        </div>
+                                        <p class="text-sm text-[#4c669a] dark:text-gray-400 font-medium">Nhấp để tải lên
+                                            hoặc kéo thả</p>
+                                        <p class="text-xs text-[#4c669a]/70 dark:text-gray-500">PNG, JPG tối đa 5MB</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Section 3: Thông tin kinh doanh -->
+                        <div
+                            class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-[#e7ebf3] dark:border-gray-800 overflow-hidden">
+                            <h2 class="text-[#0d121b] dark:text-white text-xl font-bold leading-tight px-6 pt-6 pb-2">3.
+                                Thông tin kinh doanh</h2>
+                            <div class="p-6 space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="flex flex-col gap-2">
+                                        <p class="text-[#0d121b] dark:text-gray-200 text-sm font-medium">Tên doanh
+                                            nghiệp / Hộ kinh doanh</p>
+                                        <input
+                                            class="form-input w-full rounded-lg text-[#0d121b] dark:text-white border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-gray-800 h-12 px-4 focus:ring-1 focus:ring-primary"
+                                            type="text" />
+                                    </div>
+                                    <div class="flex flex-col gap-2">
+                                        <p class="text-[#0d121b] dark:text-gray-200 text-sm font-medium">Mã số thuế</p>
+                                        <input
+                                            class="form-input w-full rounded-lg text-[#0d121b] dark:text-white border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-gray-800 h-12 px-4 focus:ring-1 focus:ring-primary"
+                                            type="text" />
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <p class="text-[#0d121b] dark:text-gray-200 text-sm font-medium">Địa chỉ trụ sở
+                                        chính</p>
+                                    <input
+                                        class="form-input w-full rounded-lg text-[#0d121b] dark:text-white border border-[#cfd7e7] dark:border-gray-700 bg-white dark:bg-gray-800 h-12 px-4 focus:ring-1 focus:ring-primary"
+                                        type="text" />
+                                </div>
+                                <div class="flex flex-col gap-3 pt-2">
+                                    <span class="text-sm font-medium text-[#0d121b] dark:text-gray-200">Giấy phép đăng
+                                        ký kinh doanh</span>
+                                    <div
+                                        class="w-full border-2 border-dashed border-[#cfd7e7] dark:border-gray-700 rounded-xl p-6 flex items-center gap-6 bg-[#f8f9fc] dark:bg-gray-800 hover:border-primary transition-colors cursor-pointer group">
+                                        <div class="bg-primary/10 p-4 rounded-lg text-primary">
+                                            <span class="material-symbols-outlined text-4xl">description</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm text-[#0d121b] dark:text-white font-semibold">Tải lên Giấy
+                                                phép kinh doanh</p>
+                                            <p class="text-xs text-[#4c669a] dark:text-gray-400">Định dạng PDF, JPG hoặc
+                                                PNG. Tối đa 10MB.</p>
+                                        </div>
+                                        <button class="bg-primary text-white text-xs font-bold px-4 py-2 rounded-lg"
+                                            type="button">Chọn tệp</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Section 4: Hình ảnh & Video cơ sở -->
+                        <div
+                            class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-[#e7ebf3] dark:border-gray-800 overflow-hidden">
+                            <h2 class="text-[#0d121b] dark:text-white text-xl font-bold leading-tight px-6 pt-6 pb-2">4.
+                                Hình ảnh &amp; Video cơ sở</h2>
+                            <p class="px-6 text-[#4c669a] dark:text-gray-400 text-sm">Hình ảnh thực tế giúp tăng tỷ lệ
+                                ứng tuyển lên 200%.</p>
+                            <div class="p-6 space-y-6">
+                                <div class="flex flex-col gap-3">
+                                    <span class="text-sm font-medium text-[#0d121b] dark:text-gray-200">Hình ảnh nơi làm
+                                        việc</span>
+                                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                        <div
+                                            class="aspect-square border-2 border-dashed border-[#cfd7e7] dark:border-gray-700 rounded-xl flex flex-col items-center justify-center bg-[#f8f9fc] dark:bg-gray-800 hover:border-primary transition-colors cursor-pointer">
+                                            <span class="material-symbols-outlined text-primary">add</span>
+                                        </div>
+                                        <div class="aspect-square rounded-xl bg-cover bg-center border border-gray-200 dark:border-gray-700 relative group"
+                                            data-alt="Workspace photo preview 1"
+                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_UYJMAnso6bbZXxVFgXMVHZMo8E8GhKT0GGCBGLYzf_Ss5csWtjgZ6LtQVrIv1a0UVu-tnYEx9ycUEAfKIN0oR-Dez5YvXKtjsMoNJFVgOERe6yMM8Ll6fK2An5d2LcekozrU09x4LGs_FMFxsW8EavHaQvdpZAd2OXX9NdH6Jb6BpUWU98ZTcGWvIRoYJYkCjKnRAGuTTyspd_Me5W1jvtm7LTkkRFwjjvBekWH7ys5KmFYmPSqnr64PwuTsHQzYoE620vHx2jI')">
+                                            <div
+                                                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-center justify-center">
+                                                <button class="text-white bg-red-500 p-1 rounded-full"><span
+                                                        class="material-symbols-outlined text-sm">close</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="aspect-square rounded-xl bg-cover bg-center border border-gray-200 dark:border-gray-700 relative group"
+                                            data-alt="Workspace photo preview 2"
+                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-ECHyMtgWnrCq9z4uNaB5fLrSuycdkyYmMyCgdofQo1XFF0DvVMZh_YVVJl9YEGFF_tdwMGB2F3D4q0zc-uPzMNaijQqHUEQuTsS5gT8GYmMqxMyNLsuBAMVbMLzUUB5mB0s8SijBrVkOx1L4CDTnbPjxxTcfCr7aGdYdOk_wEom8BSIy3X-AXuDjJJKWE3FF88mgxRlSrdFZCOEmyOiOJrbcgUMXWJUuIblQSzgwkzn_Cnr1QpNerTaIWRZlYsUTpABeRe_muJo')">
+                                            <div
+                                                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-center justify-center">
+                                                <button class="text-white bg-red-500 p-1 rounded-full"><span
+                                                        class="material-symbols-outlined text-sm">close</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="aspect-square rounded-xl bg-cover bg-center border border-gray-200 dark:border-gray-700 relative group"
+                                            data-alt="Workspace photo preview 3"
+                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCU5n2CyLUodyZ8Ml7JjURGf4ayslQVVNDhGmUNVZIFkCIneNEH_r-KUxEsYyYtk_ghm2-COPcqCC7GE-ny26y19fGH3DN58qpu1ESyURWxsFtJGOkPJqRg89bc9jqQhVkzyqdi6DJv-FRjY1_az0kdm9rlo9usrEyVMNcL-OFTsDeI2FYj-AA3Fd972p5w31JW1QnD52o6snhWq8hXF4FL6iCHrjGa7NmE4X32CMV-Ivc14CrXe29_UusQUmQLoqdZm-BpDnHKVv8')">
+                                            <div
+                                                class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-center justify-center">
+                                                <button class="text-white bg-red-500 p-1 rounded-full"><span
+                                                        class="material-symbols-outlined text-sm">close</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-3">
+                                    <span class="text-sm font-medium text-[#0d121b] dark:text-gray-200">Video giới thiệu
+                                        cơ sở (Video Tour)</span>
+                                    <div
+                                        class="border-2 border-dashed border-[#cfd7e7] dark:border-gray-700 rounded-xl p-10 flex flex-col items-center justify-center gap-4 bg-[#f8f9fc] dark:bg-gray-800 hover:border-primary transition-colors cursor-pointer group">
+                                        <div
+                                            class="bg-primary p-4 rounded-full text-white shadow-lg group-hover:scale-110 transition-transform">
+                                            <span class="material-symbols-outlined text-4xl">videocam</span>
+                                        </div>
+                                        <div class="text-center">
+                                            <p class="text-sm text-[#0d121b] dark:text-white font-semibold">Tải lên
+                                                video thực tế</p>
+                                            <p class="text-xs text-[#4c669a] dark:text-gray-400 mt-1">Định dạng MP4,
+                                                MOV. Thời lượng tối đa 60 giây.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Submit Section -->
+                        <div
+                            class="flex flex-col md:flex-row items-center justify-between gap-4 py-8 border-t border-[#e7ebf3] dark:border-gray-800">
+                            <div class="flex items-start gap-3 max-w-md">
+                                <span class="material-symbols-outlined text-primary mt-0.5">verified_user</span>
+                                <p class="text-xs text-[#4c669a] dark:text-gray-400">Bằng cách nhấn Gửi yêu cầu, bạn cam
+                                    kết các thông tin cung cấp là chính xác và chịu hoàn toàn trách nhiệm trước pháp
+                                    luật về tính xác thực của các tài liệu này.</p>
+                            </div>
+                            <div class="flex gap-4 w-full md:w-auto">
+                                <button
+                                    class="flex-1 md:flex-none px-8 h-12 rounded-lg border border-[#cfd7e7] dark:border-gray-700 text-[#0d121b] dark:text-white font-bold text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                                    type="button">Lưu nháp</button>
+                                <button
+                                    class="flex-1 md:flex-none px-8 h-12 rounded-lg bg-primary text-white font-bold text-sm shadow-lg shadow-primary/20 hover:bg-blue-700 transition-all hover:-translate-y-0.5"
+                                    type="submit">Gửi yêu cầu xác minh</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Sticky footer help -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button
+            class="size-14 bg-white dark:bg-gray-800 rounded-full shadow-2xl flex items-center justify-center text-primary border border-gray-100 dark:border-gray-700 hover:scale-105 transition-transform">
+            <span class="material-symbols-outlined text-3xl">support_agent</span>
+        </button>
+    </div>
+</body>
+
+</html>
